@@ -1,0 +1,22 @@
+<div class="container" ng-app="restaurantsApp">
+  <h1>Restaurants</h1>
+
+  <div ng-controller="RestaurantsController">
+
+    <hr />
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="Restaurant in Restaurants">
+          <td>{{ Restaurant.restaurant_name }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

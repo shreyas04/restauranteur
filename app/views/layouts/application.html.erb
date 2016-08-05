@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Restauranteur</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+<% if user_signed_in? %>
+    Welcome <%=  current_user.email %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to "Sign in", new_user_session_path%>
+<% end %>
+</div>
+
+
+
+<div class="container">	
+<%= yield %>
+</div>
+
+</body>
+</html>
